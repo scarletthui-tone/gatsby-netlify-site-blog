@@ -5,9 +5,11 @@ import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Features from '../components/Features';
 import BlogRoll from '../components/BlogRoll';
+import { PageHelmet } from '../components/PageHelmet';
 
 export const IndexPageTemplate = ({ image, title, heading, subheading, mainpitch, description, intro, main }) => (
   <div>
+    <PageHelmet title={title} description={description} />
     <div
       className="full-width-image margin-top-0"
       style={{
@@ -36,7 +38,7 @@ export const IndexPageTemplate = ({ image, title, heading, subheading, mainpitch
             padding: '0.25em',
           }}
         >
-          {title}
+          {heading}
         </h1>
         <h3
           className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
