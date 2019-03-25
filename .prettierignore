@@ -1,0 +1,5 @@
+dist/
+next/
+.github
+lambda
+node_modules
