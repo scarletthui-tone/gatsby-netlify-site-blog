@@ -3,8 +3,8 @@ import { Link } from "gatsby";
 import { observer } from 'mobx-react';
 import { observable } from 'mobx';
 
-import github from "../img/github-icon.svg";
 import logo from "../img/logo.svg";
+import { pageUrls } from '../config/pageSetting';
 
 @observer
 class Navbar extends React.Component {
@@ -46,33 +46,28 @@ class Navbar extends React.Component {
             className={`navbar-menu ${this.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
+              <Link className="navbar-item" to={pageUrls.contact.url}>
+                {pageUrls.contact.title}
               </Link>
-              <Link className="navbar-item" to="/products">
-                Products
+              <div className="navbar-item has-dropdown is-hoverable">
+                <Link className="navbar-link" to={pageUrls.about.url}>
+                  {pageUrls.about.title}
+                </Link>
+                <div className="navbar-dropdown">
+                  <Link className="navbar-item" to={pageUrls.corporateProfile.url}>
+                    {pageUrls.corporateProfile.title}
+                  </Link>
+                  <Link className="navbar-item" to={pageUrls.ourBusiness.url}>
+                    {pageUrls.ourBusiness.title}
+                  </Link>
+                </div>
+              </div>
+              <Link className="navbar-item" to={pageUrls.investor.url}>
+                {pageUrls.investor.title}
               </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
+              <Link className="navbar-item" to={pageUrls.news.url}>
+                {pageUrls.news.title}
               </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
-            </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/AustinGreen/gatsby-netlify-cms-boilerplate"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
             </div>
           </div>
         </div>

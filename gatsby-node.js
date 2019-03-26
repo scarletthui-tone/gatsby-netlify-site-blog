@@ -1,7 +1,15 @@
-const _ = require('lodash');
+const get = require('lodash/get');
+const uniq = require('lodash/uniq');
+const kebabCase = require('lodash/kebabCase');
+const includes = require('lodash/includes');
+const map = require('lodash/map');
+const some = require('lodash/some');
+
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 const { fmImagesToRelative } = require('gatsby-remark-relative-images');
+
+const { langList } = require('./src/config/langSetting');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -29,12 +37,22 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
+    const langSlugList = map(langList, lang => `/${lang}/`);
     const posts = result.data.allMarkdownRemark.edges;
 
     posts.forEach(edge => {
       const id = edge.node.id;
+      let slug = edge.node.fields.slug;
+      //TODO: better loop?
+      some(langSlugList, lang => {
+        if (includes(slug, lang)) {
+          slug = lang + slug.substring(1).replace(lang, '/');
+          return true;
+        }
+        return false;
+      });
       createPage({
-        path: edge.node.fields.slug,
+        path: slug,
         tags: edge.node.frontmatter.tags,
         component: path.resolve(`src/templates/${String(edge.node.frontmatter.templateKey)}.js`),
         // additional data can be passed via context
@@ -48,16 +66,16 @@ exports.createPages = ({ actions, graphql }) => {
     let tags = [];
     // Iterate through each post, putting all found tags into `tags`
     posts.forEach(edge => {
-      if (_.get(edge, `node.frontmatter.tags`)) {
+      if (get(edge, `node.frontmatter.tags`)) {
         tags = tags.concat(edge.node.frontmatter.tags);
       }
     });
     // Eliminate duplicate tags
-    tags = _.uniq(tags);
+    tags = uniq(tags);
 
     // Make tag pages
     tags.forEach(tag => {
-      const tagPath = `/tags/${_.kebabCase(tag)}/`;
+      const tagPath = `/tags/${kebabCase(tag)}/`;
 
       createPage({
         path: tagPath,
@@ -81,5 +99,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value,
     });
+  }
+};
+
+exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
+  const config = getConfig();
+  if (stage.startsWith('develop') && config.resolve) {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'react-dom': '@hot-loader/react-dom',
+    };
   }
 };

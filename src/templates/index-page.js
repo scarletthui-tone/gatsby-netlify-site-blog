@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
+import { FormattedMessage } from 'react-intl';
 
 import Layout from '../components/Layout';
 import Features from '../components/Features';
@@ -87,7 +88,7 @@ export const IndexPageTemplate = ({ image, title, heading, subheading, mainpitch
                   <BlogRoll />
                   <div className="column is-12 has-text-centered">
                     <Link className="btn" to="/blog">
-                      Read more
+                      <FormattedMessage id="home:blog.more" defaultMessage="Read more" />
                     </Link>
                   </div>
                 </div>
