@@ -1,13 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
+import Layout from '../layouts';
 import Features from '../components/Features';
 import Testimonials from '../components/Testimonials';
 import Pricing from '../components/Pricing';
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
-export const InvestorPageTemplate = ({ image, title, heading, description, intro, main, testimonials, fullImage, pricing }) => (
+export const InvestorPageTemplate = ({
+  image,
+  title,
+  heading,
+  description,
+  intro,
+  main,
+  testimonials,
+  fullImage,
+  pricing,
+}) => (
   <section className="section section--gradient">
     <div className="container">
       <div className="section">
@@ -17,7 +27,9 @@ export const InvestorPageTemplate = ({ image, title, heading, description, intro
               <div
                 className="full-width-image-container margin-top-0"
                 style={{
-                  backgroundImage: `url(${!!image.childImageSharp ? image.childImageSharp.fluid.src : image})`,
+                  backgroundImage: `url(${
+                    !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+                  })`,
                 }}
               >
                 <h2
@@ -70,7 +82,9 @@ export const InvestorPageTemplate = ({ image, title, heading, description, intro
               <div
                 className="full-width-image-container"
                 style={{
-                  backgroundImage: `url(${fullImage.childImageSharp ? fullImage.childImageSharp.fluid.src : fullImage})`,
+                  backgroundImage: `url(${
+                    fullImage.childImageSharp ? fullImage.childImageSharp.fluid.src : fullImage
+                  })`,
                 }}
               />
               <h2 className="has-text-weight-semibold is-size-2">{pricing.heading}</h2>

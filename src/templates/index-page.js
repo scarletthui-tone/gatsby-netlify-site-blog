@@ -3,18 +3,29 @@ import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 
-import Layout from '../components/Layout';
+import Layout from '../layouts';
 import Features from '../components/Features';
 import BlogRoll from '../components/BlogRoll';
 import { PageHelmet } from '../components/PageHelmet';
 
-export const IndexPageTemplate = ({ image, title, heading, subheading, mainpitch, description, intro, main }) => (
+export const IndexPageTemplate = ({
+  image,
+  title,
+  heading,
+  subheading,
+  mainpitch,
+  description,
+  intro,
+  main,
+}) => (
   <div>
     <PageHelmet title={title} description={description} />
     <div
       className="full-width-image margin-top-0"
       style={{
-        backgroundImage: `url(${!!image.childImageSharp ? image.childImageSharp.fluid.src : image})`,
+        backgroundImage: `url(${
+          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
+        })`,
         backgroundPosition: `top left`,
         backgroundAttachment: `fixed`,
       }}
