@@ -2,14 +2,14 @@ const get = require('lodash/get');
 const uniq = require('lodash/uniq');
 const kebabCase = require('lodash/kebabCase');
 const includes = require('lodash/includes');
-const map = require('lodash/map');
+const pull = require('lodash/pull');
 const some = require('lodash/some');
 
 const path = require('path');
 const { createFilePath } = require('gatsby-source-filesystem');
 const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 
-const { langList } = require('./src/config/langSetting');
+const { langList, DEFAULT_LANG } = require('./src/config/langSetting');
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -37,27 +37,31 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors);
     }
 
-    const langSlugList = map(langList, lang => `/${lang}/`);
     const posts = result.data.allMarkdownRemark.edges;
 
     posts.forEach(edge => {
       const id = edge.node.id;
       let slug = edge.node.fields.slug;
+      let currLang = DEFAULT_LANG;
+
       //TODO: better loop?
-      some(langSlugList, lang => {
-        if (includes(slug, lang)) {
-          slug = lang + slug.substring(1).replace(lang, '/');
+      some(pull(langList, DEFAULT_LANG), lang => {
+        if (includes(slug, `/${lang}/`)) {
+          currLang = lang;
+          slug = `/${lang}${slug.replace(`/${lang}/`, '/')}`;
           return true;
         }
         return false;
       });
+
       createPage({
-        path: slug,
+        path: slug.replace(`/home/`, '/'), //handle home page
         tags: edge.node.frontmatter.tags,
         component: path.resolve(`src/templates/${String(edge.node.frontmatter.templateKey)}.js`),
-        // additional data can be passed via context
+        // additional data can be passed via context as this.props.pageContext
         context: {
           id,
+          lang: currLang,
         },
       });
     });
@@ -84,6 +88,22 @@ exports.createPages = ({ actions, graphql }) => {
           tag,
         },
       });
+    });
+  });
+};
+
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage } = actions;
+
+  //create page that is not a md for all lang
+  langList.forEach(lang => {
+    createPage({
+      ...page,
+      path: `/${lang}${page.path}`,
+      context: {
+        ...page.context,
+        lang,
+      },
     });
   });
 };

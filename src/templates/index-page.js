@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 
-import Layout from '../layouts';
 import Features from '../components/Features';
 import BlogRoll from '../components/BlogRoll';
 import { PageHelmet } from '../components/PageHelmet';
@@ -128,17 +127,15 @@ const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
-    <Layout>
-      <IndexPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
-      />
-    </Layout>
+    <IndexPageTemplate
+      image={frontmatter.image}
+      title={frontmatter.title}
+      heading={frontmatter.heading}
+      subheading={frontmatter.subheading}
+      mainpitch={frontmatter.mainpitch}
+      description={frontmatter.description}
+      intro={frontmatter.intro}
+    />
   );
 };
 

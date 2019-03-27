@@ -80,7 +80,7 @@ typings/
 # idea
 .idea
 
-lang/.messages/
+src/lang/.messages/
 
 dist
 

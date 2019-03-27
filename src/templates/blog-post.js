@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { kebabCase } from 'lodash';
 import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
-import Layout from '../layouts';
 import Content, { HTMLContent } from '../components/Content';
 
 export const BlogPostTemplate = ({ content, contentComponent, description = '', tags, title }) => {
@@ -53,15 +52,13 @@ const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout>
-      <BlogPostTemplate
-        content={post.html}
-        contentComponent={HTMLContent}
-        tags={post.frontmatter.tags}
-        title={post.frontmatter.title}
-        description={post.frontmatter.description}
-      />
-    </Layout>
+    <BlogPostTemplate
+      content={post.html}
+      contentComponent={HTMLContent}
+      tags={post.frontmatter.tags}
+      title={post.frontmatter.title}
+      description={post.frontmatter.description}
+    />
   );
 };
 

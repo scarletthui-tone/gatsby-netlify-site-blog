@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import Layout from '../layouts';
 import Features from '../components/Features';
 import Testimonials from '../components/Testimonials';
 import Pricing from '../components/Pricing';
@@ -126,19 +125,17 @@ const InvestorPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
-    <Layout>
-      <InvestorPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
-        main={frontmatter.main}
-        testimonials={frontmatter.testimonials}
-        fullImage={frontmatter.full_image}
-        pricing={frontmatter.pricing}
-      />
-    </Layout>
+    <InvestorPageTemplate
+      image={frontmatter.image}
+      title={frontmatter.title}
+      heading={frontmatter.heading}
+      description={frontmatter.description}
+      intro={frontmatter.intro}
+      main={frontmatter.main}
+      testimonials={frontmatter.testimonials}
+      fullImage={frontmatter.full_image}
+      pricing={frontmatter.pricing}
+    />
   );
 };
 
