@@ -23,9 +23,15 @@ langList.forEach(lang => {
   }
 });
 
-const TemplateWrapper = ({ children, pageContext, ...rest }) => {
+const TemplateWrapper = ({ children, pageContext, location, ...rest }) => {
   const { title, description } = useSiteMetadata();
   const lang = pageContext.lang || DEFAULT_LANG;
+
+  let purePath = `${location.pathname}/`.replace('//', '/');
+
+  langList.forEach(lang => {
+    purePath = purePath.replace(`/${lang}/`, '/');
+  });
 
   return (
     <IntlProvider key={lang} locale={lang} messages={messagesList[lang]} initialNow={Date.now()}>
@@ -47,9 +53,9 @@ const TemplateWrapper = ({ children, pageContext, ...rest }) => {
           <meta property="og:url" content="/" />
           <meta property="og:image" content="/img/og-image.jpg" />
         </Helmet>
-        <Navbar lang={lang}/>
+        <Navbar lang={lang} />
         <div>{children}</div>
-        <Footer />
+        <Footer pathname={purePath} />
       </div>
     </IntlProvider>
   );
