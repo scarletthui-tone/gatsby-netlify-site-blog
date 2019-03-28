@@ -44,18 +44,28 @@ exports.createPages = ({ actions, graphql }) => {
       let slug = edge.node.fields.slug;
       let currLang = DEFAULT_LANG;
 
+      console.log('slug: ' + slug);
+
       //TODO: better loop?
       some(pull(langList, DEFAULT_LANG), lang => {
-        if (includes(slug, `/${lang}/`)) {
+
+        console.log('looping lang: ' + lang);
+
+        if (includes(slug, `--${lang}/`)) {
+
+          console.log('include lang!');
+
           currLang = lang;
-          slug = `/${lang}${slug.replace(`/${lang}/`, '/')}`;
+          slug = `/${lang}${slug.replace(`--${lang}/`, '/')}`;
           return true;
         }
         return false;
       });
 
+      console.log('rewrite slug: ' + slug.replace(`/home/`, '/').replace(`/index/`, '/'));
+
       createPage({
-        path: slug.replace(`/home/`, '/'), //handle home page
+        path: slug.replace(`/home/`, '/').replace(`/index/`, '/'), //handle home page and index
         tags: edge.node.frontmatter.tags,
         component: path.resolve(`src/templates/${String(edge.node.frontmatter.templateKey)}.js`),
         // additional data can be passed via context as this.props.pageContext
@@ -64,6 +74,9 @@ exports.createPages = ({ actions, graphql }) => {
           lang: currLang,
         },
       });
+
+      console.log('-------------------------');
+
     });
 
     // Tag pages:
@@ -111,6 +124,8 @@ exports.onCreatePage = ({ page, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   fmImagesToRelative(node); // convert image paths for gatsby images
+
+  console.log(node.path);
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode });

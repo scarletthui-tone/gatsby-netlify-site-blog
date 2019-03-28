@@ -7,7 +7,7 @@ import instagram from '../img/social/instagram.svg';
 import twitter from '../img/social/twitter.svg';
 import vimeo from '../img/social/vimeo.svg';
 
-import { LANG_JP, LANG_EN } from '../config/langSetting';
+import { LANG_JP, LANG_ZH } from '../config/langSetting';
 
 const Footer = class extends React.Component {
   render() {
@@ -100,6 +100,8 @@ const Footer = class extends React.Component {
                   </div>
                   <div className="column is-12">
                     <Link to={`/${LANG_JP}${pathname}`}>JP</Link>
+                    /
+                    <Link to={`/${LANG_ZH}${pathname}`}>ZH</Link>
                     /
                     <Link to={`/${pathname}`}>EN</Link>
                   </div>
