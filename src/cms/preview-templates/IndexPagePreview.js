@@ -1,11 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { IndexPageTemplate } from '../../templates/index-page';
 
 const IndexPagePreview = ({ entry, getAsset }) => {
-  const entryBlurbs = entry.getIn(['data', 'intro', 'blurbs']);
-
-  const blurbs = entryBlurbs ? entryBlurbs.toJS() : [];
 
   return (
     <IndexPageTemplate
@@ -14,20 +10,17 @@ const IndexPagePreview = ({ entry, getAsset }) => {
       heading={entry.getIn(['data', 'heading'])}
       subheading={entry.getIn(['data', 'subheading'])}
       description={entry.getIn(['data', 'description'])}
-      mainpitch={{
-        title: entry.getIn(['data', 'mainpitch', 'title']),
-        description: entry.getIn(['data', 'mainpitch', 'description']),
-      }}
-      intro={{ blurbs }}
+      hero={entry.getIn(['data', 'hero'])}
+      intro={entry.getIn(['data', 'intro'])}
+      offerings={entry.getIn(['data', 'offerings'])}
+      products={entry.getIn(['data', 'products'])}
+      team={entry.getIn(['data', 'team'])}
+      advisors={entry.getIn(['data', 'advisors'])}
+      investors={entry.getIn(['data', 'investors'])}
+      partnerships={entry.getIn(['data', 'partnerships'])}
+      hiring={entry.getIn(['data', 'hiring'])}
     />
   );
-};
-
-IndexPagePreview.propTypes = {
-  entry: PropTypes.shape({
-    getIn: PropTypes.func,
-  }),
-  getAsset: PropTypes.func,
 };
 
 export default IndexPagePreview;
