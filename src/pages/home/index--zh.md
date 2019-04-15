@@ -107,15 +107,16 @@ partnerships:
   heading: Partnerships
   list:
     - title: Debt & Special Sit Portfolio Owners
-      img: /img/partnerships/debt.svg
+      icon: /img/partnerships/debt.svg
     - title: Venture Capital Firms
-      img: /img/partnerships/venture-capital-firms.svg
+      icon: /img/partnerships/venture-capital-firms.svg
     - title: Designated Market Markers
-      img: /img/partnerships/market-makers.svg
+      icon: /img/partnerships/market-makers.svg
     - title: Over the Counter Trading Desks
-      img: /img/partnerships/trading-desk.svg
+      icon: /img/partnerships/trading-desk.svg
 hiring:
   heading: Hiring
-  content: We are actively hiring with openings listed on AngelList. Join us now!
+  content: We are actively hiring with openings listed on AngelList.
   link: https://angel.co/plutux/jobs
+  linkText: Join us now!
 ---
