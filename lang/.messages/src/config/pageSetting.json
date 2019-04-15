@@ -34,5 +34,9 @@
   {
     "id": "pageUrl:tag",
     "defaultMessage": "Tag"
+  },
+  {
+    "id": "pageUrl:team",
+    "defaultMessage": "Team"
   }
 ]

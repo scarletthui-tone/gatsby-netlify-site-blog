@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,600');
+
+// Set your brand colors
+$darkBlue: #14364c;
+$blackBlue: #0f2b3d;
+$tealish: #24b99d;
+$blueGreen: #178072;
+$greyish: #aaaaaa;
+$white: #ffffff;
+
+// Update Bulma's global variables
+$family-sans-serif: 'Muli', sans-serif;
+$body-color: $darkBlue;
+//$grey-dark: $lightBlack;
+//$grey-light: $lightGray;
+$primary: $tealish;
+$info: $darkBlue;
+
+$link: $tealish;
+//$gap: 16px;
+
+// Update some of Bulma's component variables
+//$body-background-color: $lightGray;
+//$control-border-width: 2px;
+//$input-border-color: transparent;
+//$input-shadow: none;
+//
+//$section-padding: 32px 16px;
+//$navbar-background-color: $white;
+//
+//$tabs-border-bottom-color: $gray;
+
+// Import only what you need from Bulma
+@import '../../node_modules/bulma/sass/utilities/_all.sass';
+@import '../../node_modules/bulma/sass/base/_all.sass';
+@import '../../node_modules/bulma/sass/grid/all';
+@import '../../node_modules/bulma/sass/elements/button.sass';
+@import '../../node_modules/bulma/sass/elements/container.sass';
+@import '../../node_modules/bulma/sass/elements/form.sass';
+@import '../../node_modules/bulma/sass/elements/title.sass';
+@import '../../node_modules/bulma/sass/elements/tag.sass';
+@import '../../node_modules/bulma/sass/components/tabs.sass';
+@import '../../node_modules/bulma/sass/components/navbar.sass';
+@import '../../node_modules/bulma/sass/layout/hero.sass';
+@import '../../node_modules/bulma/sass/layout/section.sass';
+@import '../../node_modules/bulma/sass/layout/footer';
+
+svg {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,73 @@
+import React from 'react';
+import { kebabCase } from 'lodash';
+import Helmet from 'react-helmet';
+import { graphql} from 'gatsby';
+import Content, { HTMLContent } from '../components/Content';
+import CustomLink from '../components/Atoms/CustomLink';
+
+
+export const AdvistorPageTemplate = ({ content, contentComponent, description = '', tags, title }) => {
+  const PostContent = contentComponent || Content;
+
+  return (
+    <section className="section">
+      <Helmet titleTemplate="%s | Blog">
+        <meta charSet="utf-8" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Helmet>
+      <div className="container content">
+        <div className="columns">
+          <div className="column is-10 is-offset-1">
+            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">{title}</h1>
+            <p>{description}</p>
+            <PostContent content={content} />
+            {tags && tags.length ? (
+              <div style={{ marginTop: `4rem` }}>
+                <h4>Tags</h4>
+                <ul className="taglist">
+                  {tags.map(tag => (
+                    <li key={tag + `tag`}>
+                      <CustomLink to={`/tags/${kebabCase(tag)}/`}>{tag}</CustomLink>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const AdvisorPage = ({ data }) => {
+  const { markdownRemark: post } = data;
+
+  return (
+    <AdvistorPageTemplate
+      content={post.html}
+      contentComponent={HTMLContent}
+      tags={post.frontmatter.tags}
+      title={post.frontmatter.title}
+      description={post.frontmatter.description}
+    />
+  );
+};
+
+export default AdvisorPage;
+
+export const pageQuery = graphql`
+  query AdvistorByID($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      id
+      html
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        title
+        description
+        tags
+      }
+    }
+  }
+`;

@@ -38,4 +38,8 @@ export const pageUrls = {
     url: '/tag',
     title: <FormattedMessage id="pageUrl:tag" defaultMessage="Tag" />
   },
+  team: {
+    url: '/team',
+    title: <FormattedMessage id="pageUrl:team" defaultMessage="Team" />
+  },
 }

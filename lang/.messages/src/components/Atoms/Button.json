@@ -1,0 +1,22 @@
+[
+  {
+    "id": "common:button.ok",
+    "defaultMessage": "OK"
+  },
+  {
+    "id": "common:button.submit",
+    "defaultMessage": "Submit"
+  },
+  {
+    "id": "common:button.back",
+    "defaultMessage": "Back"
+  },
+  {
+    "id": "common:button.next",
+    "defaultMessage": "Next"
+  },
+  {
+    "id": "common:button.viewAll",
+    "defaultMessage": "View All"
+  }
+]

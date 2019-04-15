@@ -23,12 +23,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "babel-plugin-inline-react-svg": "^1.1.0",
     "bulma": "^0.7.4",
     "gatsby": "^2.1.34",
     "gatsby-image": "^2.0.23",
     "gatsby-plugin-layout": "^1.0.13",
     "gatsby-plugin-netlify": "^2.0.6",
     "gatsby-plugin-netlify-cms": "^3.0.15",
+    "gatsby-plugin-nprogress": "^2.0.10",
     "gatsby-plugin-purgecss": "^3.1.0",
     "gatsby-plugin-react-helmet": "^3.0.4",
     "gatsby-plugin-remove-trailing-slashes": "^2.0.10",
@@ -54,7 +56,9 @@
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
     "react-intl": "^2.8.0",
+    "react-modal": "^3.8.1",
     "styled-components": "^4.1.3",
+    "styled-system": "^4.1.0",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
@@ -64,6 +68,11 @@
     "babel-plugin-react-intl": "^3.0.1",
     "babel-plugin-styled-components": "^1.10.0",
     "babel-preset-gatsby": "^0.1.10",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
     "http-proxy-middleware": "^0.19.1",
     "mobx-devtools": "^0.9.21",
     "mobx-react-devtools": "^6.1.1",

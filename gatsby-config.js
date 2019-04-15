@@ -1,4 +1,4 @@
-var proxy = require('http-proxy-middleware');
+const proxy = require('http-proxy-middleware');
 
 module.exports = {
   // default meta
@@ -11,7 +11,7 @@ module.exports = {
     'gatsby-plugin-layout',
     'gatsby-plugin-sass',
     {
-      resolve: `gatsby-plugin-styled-components`,
+      resolve: 'gatsby-plugin-styled-components',
       options: {
         displayName: true,
       },
@@ -75,17 +75,26 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        // Setting a color is optional.
+        color: 'tomato',
+        // Disable the loading spinner.
+        showSpinner: false,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
         develop: true, // Activates purging in npm run develop
-        purgeOnly: ['/all.scss'], // applies purging only on the bulma css file
+        purgeOnly: ['/app.scss'], // applies purging only on the bulma css file
       },
     }, // must be after other CSS plugins
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
   // for avoiding CORS while developing Netlify Functions locally
   // read more: https://www.gatsbyjs.org/docs/api-proxy/#advanced-proxying
-  developMiddleware: app => {
+  developMiddleware: (app) => {
     app.use(
       '/.netlify/functions/',
       proxy({
@@ -93,7 +102,7 @@ module.exports = {
         pathRewrite: {
           '/.netlify/functions/': '',
         },
-      })
+      }),
     );
   },
 };

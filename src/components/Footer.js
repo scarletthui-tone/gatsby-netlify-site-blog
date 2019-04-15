@@ -1,118 +1,126 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { graphql, StaticQuery } from 'gatsby';
+import styled from 'styled-components';
+import { FormattedMessage } from 'react-intl';
 
-import logo from '../img/logo.svg';
-import facebook from '../img/social/facebook.svg';
-import instagram from '../img/social/instagram.svg';
-import twitter from '../img/social/twitter.svg';
-import vimeo from '../img/social/vimeo.svg';
+import Logo from '../img/logo.svg';
 
 import { LANG_JP, LANG_ZH } from '../config/langSetting';
+import Container from './Atoms/Container';
+import Row from './Atoms/Row';
+import Column from './Atoms/Column';
+import Box from './Atoms/Box';
+import PreviewCompatibleImage from './PreviewCompatibleImage';
+import SiteMap from './SiteMap';
+import Paragraph from './Atoms/Paragraph';
+import theme from '../styles/theme';
+import CustomLink from './Atoms/CustomLink';
 
-const Footer = class extends React.Component {
+{
+  /* <Link to={`/${LANG_JP}${pathname}`}>JP</Link> */
+}
+{
+  /* / */
+}
+{
+  /* <Link to={`/${LANG_ZH}${pathname}`}>ZH</Link> */
+}
+{
+  /* / */
+}
+{
+  /* <Link to={`/${pathname}`}>EN</Link> */
+}
+
+const FooterSection = styled.footer`
+  && {
+    padding: 64px 0 0 0;
+    border-top: #24b99d solid 4px;
+    background-color: ${props => props.theme.color.blackBlue};
+  }
+`;
+
+class FooterUI extends React.Component {
   render() {
-    const { pathname } = this.props;
+    const { data, pathname } = this.props;
+    const { footer, copyright } = data.markdownRemark.frontmatter;
 
     return (
-      <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
-          <img src={logo} alt="Kaldi" style={{ width: '14em', height: '10em' }} />
-        </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
-            <div className="columns">
-              <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/about">
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/blog">
-                        Latest Stories
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4 ">
-                <div className="columns is-multiline">
-                  <div className="column is-12 social">
-                    <a title="facebook" href="https://facebook.com">
-                      <img src={facebook} alt="Facebook" style={{ width: '1em', height: '1em' }} />
-                    </a>
-                    <a title="twitter" href="https://twitter.com">
-                      <img
-                        className="fas fa-lg"
-                        src={twitter}
-                        alt="Twitter"
-                        style={{ width: '1em', height: '1em' }}
-                      />
-                    </a>
-                    <a title="instagram" href="https://instagram.com">
-                      <img
-                        src={instagram}
-                        alt="Instagram"
-                        style={{ width: '1em', height: '1em' }}
-                      />
-                    </a>
-                    <a title="vimeo" href="https://vimeo.com">
-                      <img src={vimeo} alt="Vimeo" style={{ width: '1em', height: '1em' }} />
-                    </a>
-                  </div>
-                  <div className="column is-12">
-                    <Link to={`/${LANG_JP}${pathname}`}>JP</Link>
-                    /
-                    <Link to={`/${LANG_ZH}${pathname}`}>ZH</Link>
-                    /
-                    <Link to={`/${pathname}`}>EN</Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <FooterSection className="footer">
+        <Container pb={3} px={3}>
+          <Row>
+            <Column col="is-3">
+              <Box width={140}>
+                <PreviewCompatibleImage imageInfo={{ image: Logo }} />
+              </Box>
+            </Column>
+            <Column col="is-9">
+              <SiteMap footer={footer} />
+            </Column>
+          </Row>
+        </Container>
+        <Box width="100%" borderTop="1px solid #dee2e6" py={3} textAlign="center">
+          <Box as="span" mr={2}>
+            <Paragraph color={theme.color.white} textAlign="center" fontSize={0}>
+              {copyright}
+            </Paragraph>
+          </Box>
+          <CustomLink to="/terms_and_conditions">
+            <Box as="span" mr={2}>
+              <Paragraph fontSize={0}>
+                <FormattedMessage id="footer:tnc" defaultMessage="Terms and Conditions" />
+              </Paragraph>
+            </Box>
+          </CustomLink>
+          <CustomLink to="/risk_disclosure">
+            <Box as="span" mr={2}>
+              <Paragraph fontSize={0}>
+                <FormattedMessage id="footer:risk" defaultMessage="Risk Disclosure" />
+              </Paragraph>
+            </Box>
+          </CustomLink>
+          <CustomLink to="/privacy_policy">
+            <Box as="span">
+              <Paragraph fontSize={0}>
+                <FormattedMessage id="footer:privacy" defaultMessage="Privacy Policy" />
+              </Paragraph>
+            </Box>
+          </CustomLink>
+        </Box>
+      </FooterSection>
     );
   }
-};
+}
+
+
+export const footerQuery = graphql`
+  query SiteMapPageQuery {
+    markdownRemark(frontmatter: { component: { eq: "footer" } }) {
+      frontmatter {
+        copyright
+        footer {
+          title
+          links {
+            label
+            url
+            openNewTab
+          }
+        }
+      }
+    }
+  }
+`;
+
+
+class Footer extends React.PureComponent {
+  render() {
+    return (
+      <StaticQuery
+        query={footerQuery}
+        render={data => <FooterUI data={data} />}
+      />
+    );
+  }
+}
 
 export default Footer;

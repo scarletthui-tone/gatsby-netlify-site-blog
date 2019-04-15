@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { kebabCase } from 'lodash';
 import Helmet from 'react-helmet';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Content, { HTMLContent } from '../components/Content';
+import CustomLink from '../components/Atoms/CustomLink';
 
 export const BlogPostTemplate = ({ content, contentComponent, description = '', tags, title }) => {
   const PostContent = contentComponent || Content;
@@ -27,7 +28,7 @@ export const BlogPostTemplate = ({ content, contentComponent, description = '', 
                 <ul className="taglist">
                   {tags.map(tag => (
                     <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      <CustomLink to={`/tags/${kebabCase(tag)}/`}>{tag}</CustomLink>
                     </li>
                   ))}
                 </ul>

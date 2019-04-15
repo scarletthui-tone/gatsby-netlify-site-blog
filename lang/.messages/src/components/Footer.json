@@ -1,0 +1,14 @@
+[
+  {
+    "id": "footer:tnc",
+    "defaultMessage": "Terms and Conditions"
+  },
+  {
+    "id": "footer:risk",
+    "defaultMessage": "Risk Disclosure"
+  },
+  {
+    "id": "footer:privacy",
+    "defaultMessage": "Privacy Policy"
+  }
+]

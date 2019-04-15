@@ -31,7 +31,7 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     if (result.errors) {
       result.errors.forEach(e => console.error(e.toString()));
       return Promise.reject(result.errors);
@@ -39,20 +39,22 @@ exports.createPages = ({ actions, graphql }) => {
 
     const posts = result.data.allMarkdownRemark.edges;
 
-    posts.forEach(edge => {
-      const id = edge.node.id;
-      let slug = edge.node.fields.slug;
+    posts.forEach((edge) => {
+      const { id } = edge.node;
+      let { slug } = edge.node.fields;
       let currLang = DEFAULT_LANG;
 
-      console.log('slug: ' + slug);
+      if (!edge.node.frontmatter.templateKey) {
+        return;
+      }
 
-      //TODO: better loop?
-      some(pull(langList, DEFAULT_LANG), lang => {
+      console.log(`slug: ${slug}`);
 
-        console.log('looping lang: ' + lang);
+      // TODO: better loop?
+      some(pull(langList, DEFAULT_LANG), (lang) => {
+        console.log(`looping lang: ${lang}`);
 
         if (includes(slug, `--${lang}/`)) {
-
           console.log('include lang!');
 
           currLang = lang;
@@ -62,10 +64,10 @@ exports.createPages = ({ actions, graphql }) => {
         return false;
       });
 
-      console.log('rewrite slug: ' + slug.replace(`/home/`, '/').replace(`/index/`, '/'));
+      console.log(`rewrite slug: ${slug.replace('/home/', '/').replace('/index/', '/')}`);
 
       createPage({
-        path: slug.replace(`/home/`, '/').replace(`/index/`, '/'), //handle home page and index
+        path: slug.replace('/home/', '/').replace('/index/', '/'), // handle home page and index
         tags: edge.node.frontmatter.tags,
         component: path.resolve(`src/templates/${String(edge.node.frontmatter.templateKey)}.js`),
         // additional data can be passed via context as this.props.pageContext
@@ -76,14 +78,13 @@ exports.createPages = ({ actions, graphql }) => {
       });
 
       console.log('-------------------------');
-
     });
 
     // Tag pages:
     let tags = [];
     // Iterate through each post, putting all found tags into `tags`
-    posts.forEach(edge => {
-      if (get(edge, `node.frontmatter.tags`)) {
+    posts.forEach((edge) => {
+      if (get(edge, 'node.frontmatter.tags')) {
         tags = tags.concat(edge.node.frontmatter.tags);
       }
     });
@@ -91,12 +92,12 @@ exports.createPages = ({ actions, graphql }) => {
     tags = uniq(tags);
 
     // Make tag pages
-    tags.forEach(tag => {
+    tags.forEach((tag) => {
       const tagPath = `/tags/${kebabCase(tag)}/`;
 
       createPage({
         path: tagPath,
-        component: path.resolve(`src/templates/tags.js`),
+        component: path.resolve('src/templates/tags.js'),
         context: {
           tag,
         },
@@ -108,8 +109,8 @@ exports.createPages = ({ actions, graphql }) => {
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage } = actions;
 
-  //create page that is not a md for all lang
-  langList.forEach(lang => {
+  // create page that is not a md for all lang
+  langList.forEach((lang) => {
     createPage({
       ...page,
       path: `/${lang}${page.path}`,
@@ -127,10 +128,10 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   console.log(node.path);
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === 'MarkdownRemark') {
     const value = createFilePath({ node, getNode });
     createNodeField({
-      name: `slug`,
+      name: 'slug',
       node,
       value,
     });

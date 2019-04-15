@@ -1,7 +1,8 @@
 import React from 'react';
 import kebabCase from 'lodash/kebabCase';
 import Helmet from 'react-helmet';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
+import CustomLink from '../../components/Atoms/CustomLink';
 
 const TagsPage = ({
   data: {
@@ -20,9 +21,9 @@ const TagsPage = ({
           <ul className="taglist">
             {group.map(tag => (
               <li key={tag.fieldValue}>
-                <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                <CustomLink to={`/tags/${kebabCase(tag.fieldValue)}/`}>
                   {tag.fieldValue} ({tag.totalCount})
-                </Link>
+                </CustomLink>
               </li>
             ))}
           </ul>
