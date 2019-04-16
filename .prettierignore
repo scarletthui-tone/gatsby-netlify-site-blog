@@ -3,3 +3,4 @@ next/
 .github
 lambda
 node_modules
+*.yml

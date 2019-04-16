@@ -15,50 +15,166 @@ collections:
     fields:
       - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'index-page' }
       - { label: Title, name: title, widget: string }
-      - { label: Image, name: image, widget: image }
       - { label: Heading, name: heading, widget: string }
       - { label: Subheading, name: subheading, widget: string }
       - { label: Description, name: description, widget: string }
       - {
-          label: Mainpitch,
-          name: mainpitch,
-          widget: object,
-          fields:
-            [
-              { label: Title, name: title, widget: string },
-              { label: Description, name: description, widget: text },
-            ],
-        }
+        label: Hero,
+        name: hero,
+        widget: object,
+        fields:
+          [
+          { label: Title, name: title, widget: string },
+          { label: Description, name: description, widget: text },
+          { label: Coming Date, name: comingDate, widget: string },
+          { label: Banner,
+            name: banner,
+            widget: object,
+            fields:
+              [
+              { label: Alt, name: alt, widget: string },
+              { label: Image, name: image, widget: image },
+              ]
+          },
+          ],
+      }
       - {
-          label: Intro,
-          name: intro,
-          widget: object,
-          fields:
-            [
-              { label: Heading, name: heading, widget: string },
-              { label: Description, name: description, widget: text },
+        label: Intro,
+        name: intro,
+        widget: object,
+        fields:
+          [
+          { label: Heading, name: heading, widget: string },
+          { label: Content, name: content, widget: text },
+          { label: Introduction Image, name: img, widget: image },
+          ],
+      }
+      - {
+        label: Offerings,
+        name: offerings,
+        widget: object,
+        fields:
+          [
+          { label: Heading, name: heading, widget: string },
+          { label: Content, name: content, widget: text },
+          {
+            label: Offering list,
+            name: list,
+            widget: list,
+            allow_add: false,
+            fields:
+              [
+              { label: Category title, name: title, widget: string },
+              { label: Category items, name: items, widget: list },
+              ],
+          },
+          ],
+      }
+      - {
+        label: Products,
+        name: products,
+        widget: object,
+        fields:
+          [
+          { label: Heading, name: heading, widget: string },
+          {
+            label: Products,
+            name: products,
+            widget: list,
+            allow_add: false,
+            fields:
+              [
+              { label: Product title, name: title, widget: string },
+              { label: Product content, name: content, widget: string },
+              { label: Product image, name: img, widget: image },
               {
-                label: Blurbs,
-                name: blurbs,
+                label: Product points,
+                name: list,
                 widget: list,
-                fields:
-                  [
-                    { label: Image, name: image, widget: image },
-                    { label: Text, name: text, widget: text },
-                  ],
+                field: { label: Points, name: point, widget: string },
               },
-            ],
-        }
-
+              ],
+          },
+          ],
+      }
+      - {
+        label: Team,
+        name: team,
+        widget: object,
+        fields:
+          [
+          { label: Heading, name: heading, widget: string },
+          { label: Content, name: content, widget: text },
+          ]
+      }
+      - {
+        label: Advisors,
+        name: advisors,
+        widget: object,
+        fields:
+          [
+          { label: Heading, name: heading, widget: string },
+          ]
+      }
+      - {
+        label: Investors,
+        name: investors,
+        widget: object,
+        fields:
+          [
+          { label: Heading, name: heading, widget: string },
+          { label: Investors,
+            name: list,
+            widget: list,
+            fields:
+              [
+              { label: Title, name: title, widget: string },
+              { label: Image, name: img, widget: image },
+              { label: Url, name: url, widget: string },
+              ]
+          },
+          ]
+      }
+      - {
+        label: Partnerships,
+        name: partnerships,
+        widget: object,
+        fields:
+          [
+          { label: Heading, name: heading, widget: string },
+          { label: Partnership points,
+            name: list,
+            widget: list,
+            fields:
+              [
+              { label: Title, name: title, widget: string },
+              { label: Icon, name: icon, widget: image },
+              ]
+          },
+          ]
+      }
+      - {
+        label: Hiring,
+        name: hiring,
+        widget: object,
+        fields:
+          [
+          { label: Heading, name: heading, widget: string },
+          { label: Content, name: content, widget: string },
+          { label: Link, name: link, widget: string },
+          { label: Text for link, name: linkText, widget: string },
+          ]
+      }
+  
   - name: 'news'
     label: 'News'
     folder: 'src/pages/news'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
-    - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'blog-post' }
-    - { label: 'Title', name: 'title', widget: 'string' }
-    - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-    - { label: 'Description', name: 'description', widget: 'text' }
-    - { label: 'Body', name: 'body', widget: 'markdown' }
-    - { label: 'Tags', name: 'tags', widget: 'list' }
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'blog-post' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Tags', name: 'tags', widget: 'list' }

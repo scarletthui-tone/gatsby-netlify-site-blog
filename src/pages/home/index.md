@@ -18,7 +18,9 @@ hero:
     under Hong Kong’s Securities and Futures Commission regulatory framework.
   comingDate: >
     Launching in 2019
-  banner: /img/home/herobanner4.png
+  banner:
+    alt: banner
+    image: /img/home/herobanner4.png
 intro:
   heading: INTRODUCTION
   content: >

@@ -14,7 +14,6 @@ import Hiring from '../components/Home/Hiring';
 
 // ********************************* UI Template (Shared with CMS) *********************************
 export const IndexPageTemplate = ({
-  image,
   title,
   heading,
   subheading,
@@ -66,13 +65,15 @@ export const pageQuery = graphql`
           description
           comingDate
           banner {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                src
-                srcSet
-                aspectRatio
-                sizes
-                base64
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  src
+                  srcSet
+                  aspectRatio
+                  sizes
+                  base64
+                }
               }
             }
           }
