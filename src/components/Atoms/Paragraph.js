@@ -25,7 +25,7 @@ const StyledParagraph = styled.p`
 `;
 
 const Paragraph = ({ children, ...props }) => (
-  <StyledParagraph fontSize={[1, 1, 2]} {...props}>
+  <StyledParagraph fontSize={[2, 2, 3]} {...props}>
     {children}
   </StyledParagraph>
 );

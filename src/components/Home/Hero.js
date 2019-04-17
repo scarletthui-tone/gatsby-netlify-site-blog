@@ -56,7 +56,7 @@ class Hero extends React.PureComponent {
           <Container>
             <Row pt={[4, 4, 4, 4]} pb={7}>
               <Column col="is-6">
-                <HeroHeading fontSize={[5, 6]} mt={[2, 2, 3]}>
+                <HeroHeading fontSize={[6, 7]} mt={[2, 2, 3]}>
                   {title}
                 </HeroHeading>
                 <Paragraph color={theme.color.white} fontWeight={400}>

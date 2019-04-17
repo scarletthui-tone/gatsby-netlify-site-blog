@@ -28,7 +28,7 @@ class Introduction extends React.PureComponent {
               <StyledHeading>
                 {heading}
               </StyledHeading>
-              <Paragraph fontSize={[1, 1, 2]}>
+              <Paragraph>
                 {content}
               </Paragraph>
             </Column>

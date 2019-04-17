@@ -15,7 +15,7 @@ class Hiring extends PureComponent {
     } = this.props;
 
     return (
-      <Section id="hiring" py={9}>
+      <Section id="hiring" py={7}>
         <Container>
           <Row>
             <Column>

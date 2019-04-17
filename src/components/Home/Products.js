@@ -28,7 +28,7 @@ const ProductRow = ({
           {list.map(item => (
             <FlexBox flexWrap="nowrap" justifyContent="flex-start" alignItems="baseline" pb={2}>
               <Box as="span" borderRadius="50%" background={theme.color.darkBlue} minWidth={6} height={6} mr={2} />
-              <Paragraph fontSize={1}>
+              <Paragraph fontSize={2}>
                 {item}
               </Paragraph>
             </FlexBox>

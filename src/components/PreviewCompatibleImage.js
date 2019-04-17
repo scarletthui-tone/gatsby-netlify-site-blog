@@ -4,11 +4,13 @@ import Img from 'gatsby-image';
 
 const PreviewCompatibleImage = ({ imageInfo, imageStyle = {} }) => {
   const {
-    alt = '', childImageSharp, image, extension, publicURL,
+    alt = '', childImageSharp, image
   } = imageInfo;
 
-  if (!childImageSharp && extension === 'svg') {
-    return <img style={imageStyle} src={publicURL} alt={alt} />;
+  console.log(imageInfo);
+
+  if (!!image && image.extension === 'svg') {
+    return <img style={imageStyle} src={image.publicURL} alt={alt} />;
   }
 
   if (!!image && !!image.childImageSharp) {

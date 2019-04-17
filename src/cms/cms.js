@@ -9,7 +9,7 @@ import BlogPostPreview from './preview-templates/BlogPostPreview';
 import InvestorPagePreview from './preview-templates/InvestorPagePreview';
 import IndexPagePreview from './preview-templates/IndexPagePreview';
 
-class StyledComponenetWrapper extends React.Component {
+class StyledComponentWrapper extends React.Component {
   render() {
     const iframe = document.getElementsByTagName('iframe')[0];
     const iframeHeadElem = iframe.contentDocument.head;
@@ -25,11 +25,17 @@ class StyledComponenetWrapper extends React.Component {
 }
 
 CMS.registerPreviewTemplate('homes', props => (
-  <StyledComponenetWrapper>
+  <StyledComponentWrapper>
     <IndexPagePreview {...props} />
-  </StyledComponenetWrapper>
+  </StyledComponentWrapper>
 ));
+CMS.registerPreviewTemplate('blog', props => (
+  <StyledComponentWrapper>
+    <BlogPostPreview {...props} />
+  </StyledComponentWrapper>
+));
+
 // CMS.registerPreviewTemplate('homes', IndexPagePreview);
 CMS.registerPreviewTemplate('about', AboutPagePreview);
 CMS.registerPreviewTemplate('investor', InvestorPagePreview);
-CMS.registerPreviewTemplate('blog', BlogPostPreview);
+

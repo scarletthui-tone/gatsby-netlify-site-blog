@@ -26,7 +26,7 @@ class BlogRoll extends React.Component {
                     {post.frontmatter.title}
                   </Paragraph>
                 </CustomLink>
-                <Paragraph pb={[3, 3, 4]}>
+                <Paragraph fontSize={[1, 1, 2]} pb={[3, 3, 4]}>
                   {post.excerpt}
                 </Paragraph>
                 <Paragraph fontSize={1} color={theme.color.greyish} pb={[1, 1, 2]}>

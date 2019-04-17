@@ -26,7 +26,7 @@ class Team extends React.PureComponent {
               <Heading uppercase>
                 {heading}
               </Heading>
-              <Paragraph fontSize={[1, 1, 2]}>
+              <Paragraph>
                 {content}
               </Paragraph>
             </Column>
