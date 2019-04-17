@@ -4,42 +4,38 @@ import React from 'react';
 export const pageUrls = {
   home: {
     url: '/',
-    title: <FormattedMessage id="pageUrl:home" defaultMessage="Home" />
+    title: <FormattedMessage id="pageUrl:home" defaultMessage="Home" />,
   },
-  about: {
-    url: '/about',
-    title: <FormattedMessage id="pageUrl:about" defaultMessage="About Us" />
+  offeringsSection: {
+    url: '/#offerings',
+    title: <FormattedMessage id="pageUrl:offerings" defaultMessage="Offerings" />,
   },
-  corporateProfile: {
-    url: '/about/corporate-profile',
-    title: <FormattedMessage id="pageUrl:corporateProfile" defaultMessage="Corporate Profile" />
+  teamSection: {
+    url: '/#team',
+    title: <FormattedMessage id="pageUrl:team" defaultMessage="Team" />,
   },
-  ourBusiness: {
-    url: '/about/our-business',
-    title: <FormattedMessage id="pageUrl:ourBusiness" defaultMessage="Our Business" />
-  },
-  investor: {
-    url: '/investor',
-    title: <FormattedMessage id="pageUrl:investor" defaultMessage="Investor Relations" />
-  },
-  contact: {
-    url: '/contact',
-    title: <FormattedMessage id="pageUrl:contact" defaultMessage="Contact Us" />
-  },
-  announcements: {
-    url: '/announcements',
-    title: <FormattedMessage id="pageUrl:announcements" defaultMessage="Company Announcements" />
-  },
-  news: {
-    url: '/news',
-    title: <FormattedMessage id="pageUrl:news" defaultMessage="News & Events" />
-  },
-  tag: {
-    url: '/tag',
-    title: <FormattedMessage id="pageUrl:tag" defaultMessage="Tag" />
+  productSection: {
+    url: '/#product',
+    title: <FormattedMessage id="pageUrl:product" defaultMessage="Product" />,
   },
   team: {
     url: '/team',
-    title: <FormattedMessage id="pageUrl:team" defaultMessage="Team" />
+    title: <FormattedMessage id="pageUrl:team" defaultMessage="Team" />,
   },
-}
+  contact: {
+    url: '/contact',
+    title: <FormattedMessage id="pageUrl:contact" defaultMessage="Contact Us" />,
+  },
+  blog: {
+    url: '/blog',
+    title: <FormattedMessage id="pageUrl:blog" defaultMessage="Blog" />,
+  },
+  news: {
+    url: '/news',
+    title: <FormattedMessage id="pageUrl:news" defaultMessage="News & Events" />,
+  },
+  tag: {
+    url: '/tag',
+    title: <FormattedMessage id="pageUrl:tag" defaultMessage="Tag" />,
+  },
+};

@@ -31,7 +31,9 @@ intro:
     only accepting professional or accredited investors under a fully regulated framework. Our business and technology are 
     built through top-in-class talent, responsible innovation, and strict adherence to regulations. We are here to lead 
     the digital evolution and trading of assets and securities!
-  img: /img/home/introduction.png
+  img:
+    alt: introduction
+    image: /img/home/introduction.png
 offerings:
   heading: OFFERINGS
   content: >
@@ -59,16 +61,24 @@ products:
   products:
     - title: Mobile
       content: Delightful mobile trading experience built from grounds up, optimized for on-the-road trading anytime, anywhere.
-      img: /img/home/corefeatures.png
+      img:
+        alt: Mobile
+        image: /img/home/corefeatures.png
     - title: Web Trader
       content: Wide screen trading platform tailored for semi-professional and professional traders.
-      img: /img/home/trader.png
+      img:
+        alt: Web Trader
+        image: /img/home/trader.png
     - title: Advanced Trading
       content: Templated algorithms such as TWAP/VWAP/Iceburg to help obtain better trading results.
-      img: /img/home/algo.png
+      img:
+        alt: Advanced Trading
+        image: /img/home/algo.png
     - title: Security
       content: Best in class security protocols to protect client data and assets.
-      img: /img/home/security.png
+      img:
+        alt: Security
+        image: /img/home/security.png
       list:
         - Biometrics authentication within an already secured premise to access cold storage
         - Two factor authentication and multiple signatures used for core security
@@ -87,35 +97,51 @@ advisors:
   heading: Advisors
 investors:
   heading: Investors
-  list: 
+  list:
     - title: Amber AI
-      img: /img/investors_partners/logo_Amber.png
+      img:
+        alt: Amber AI
+        image: /img/investors_partners/logo_Amber.png
       url: 'https://www.amberaigroup.com/'
     - title: MindWorks
-      img: /img/investors_partners/logo_Mindworks.png
+      img:
+        alt: MindWorks
+        image: /img/investors_partners/logo_Mindworks.png
       url: 'http://www.mindworks.vc/'
     - title: Cocoon Ignite Ventures
-      img: /img/investors_partners/logo_Cocoon.png
+      img:
+        alt: Cocoon Ignite Ventures
+        image: /img/investors_partners/logo_Cocoon.png
       url: 'http://www.cocoonigniteventures.com/'
     - title: STI Financial Group
-      img: /img/investors_partners/logo_STI.png
+      img:
+        alt: STI Financial Group
+        image: /img/investors_partners/logo_STI.png
       url: 'http://www.stifg.com/'
     - title: Mandra Capital
-      img: /img/investors_partners/logo_Mandra.png
+      img:
+        alt: Mandra Capital
+        image: /img/investors_partners/logo_Mandra.png
     - title: XGD Ventures
-      img: /img/investors_partners/logo_XGD.png
+      img:
+        alt: XGD Ventures
+        image: /img/investors_partners/logo_XGD.png
       url: 'http://www.xgdventures.com/'
 partnerships:
   heading: Partnerships
   list:
     - title: Debt & Special Sit Portfolio Owners
-      icon: /img/partnerships/debt.svg
+      icon:
+        image: /img/partnerships/debt.svg
     - title: Venture Capital Firms
-      icon: /img/partnerships/venture-capital-firms.svg
+      icon:
+        image: /img/partnerships/venture-capital-firms.svg
     - title: Designated Market Markers
-      icon: /img/partnerships/market-makers.svg
+      icon:
+        image: /img/partnerships/market-makers.svg
     - title: Over the Counter Trading Desks
-      icon: /img/partnerships/trading-desk.svg
+      icon:
+        image: /img/partnerships/trading-desk.svg
 hiring:
   heading: Hiring
   content: We are actively hiring with openings listed on AngelList.

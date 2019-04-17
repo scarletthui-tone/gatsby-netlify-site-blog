@@ -65,6 +65,7 @@ export const pageQuery = graphql`
           description
           comingDate
           banner {
+            alt
             image {
               childImageSharp {
                 fluid(maxWidth: 2048, quality: 100) {
@@ -82,13 +83,16 @@ export const pageQuery = graphql`
           heading
           content
           img {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                src
-                srcSet
-                aspectRatio
-                sizes
-                base64
+            alt
+            image {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  src
+                  srcSet
+                  aspectRatio
+                  sizes
+                  base64
+                }
               }
             }
           }
@@ -107,13 +111,16 @@ export const pageQuery = graphql`
             title
             content
             img {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  src
-                  srcSet
-                  aspectRatio
-                  sizes
-                  base64
+              alt
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 2048, quality: 100) {
+                    src
+                    srcSet
+                    aspectRatio
+                    sizes
+                    base64
+                  }
                 }
               }
             }
@@ -133,13 +140,16 @@ export const pageQuery = graphql`
             title
             url
             img {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  src
-                  srcSet
-                  aspectRatio
-                  sizes
-                  base64
+              alt
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 2048, quality: 100) {
+                    src
+                    srcSet
+                    aspectRatio
+                    sizes
+                    base64
+                  }
                 }
               }
             }
@@ -150,13 +160,15 @@ export const pageQuery = graphql`
           list {
             title
             icon {
-              childImageSharp {
-                fluid(maxWidth: 120, traceSVG: { color: "#e7f7fe" }) {
-                  ...GatsbyImageSharpFluid_tracedSVG
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 2048, quality: 100) {
+                    ...GatsbyImageSharpFluid_tracedSVG
+                  }
                 }
+                extension
+                publicURL
               }
-              extension
-              publicURL
             }
           }
         }

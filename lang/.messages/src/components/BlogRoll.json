@@ -1,0 +1,6 @@
+[
+  {
+    "id": "blog:button.author",
+    "defaultMessage": "Posted by {author} on {date}"
+  }
+]

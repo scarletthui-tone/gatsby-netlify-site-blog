@@ -4,28 +4,24 @@
     "defaultMessage": "Home"
   },
   {
-    "id": "pageUrl:about",
-    "defaultMessage": "About Us"
+    "id": "pageUrl:offerings",
+    "defaultMessage": "Offerings"
   },
   {
-    "id": "pageUrl:corporateProfile",
-    "defaultMessage": "Corporate Profile"
+    "id": "pageUrl:team",
+    "defaultMessage": "Team"
   },
   {
-    "id": "pageUrl:ourBusiness",
-    "defaultMessage": "Our Business"
-  },
-  {
-    "id": "pageUrl:investor",
-    "defaultMessage": "Investor Relations"
+    "id": "pageUrl:product",
+    "defaultMessage": "Product"
   },
   {
     "id": "pageUrl:contact",
     "defaultMessage": "Contact Us"
   },
   {
-    "id": "pageUrl:announcements",
-    "defaultMessage": "Company Announcements"
+    "id": "pageUrl:blog",
+    "defaultMessage": "Blog"
   },
   {
     "id": "pageUrl:news",
@@ -34,9 +30,5 @@
   {
     "id": "pageUrl:tag",
     "defaultMessage": "Tag"
-  },
-  {
-    "id": "pageUrl:team",
-    "defaultMessage": "Team"
   }
 ]

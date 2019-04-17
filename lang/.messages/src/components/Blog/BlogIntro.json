@@ -1,0 +1,10 @@
+[
+  {
+    "id": "blog:title",
+    "defaultMessage": "Plutux Blog"
+  },
+  {
+    "id": "blog:intro",
+    "defaultMessage": "Regular updates and research findings from the Plutux Team to help you understand more about our vision, team, and product."
+  }
+]

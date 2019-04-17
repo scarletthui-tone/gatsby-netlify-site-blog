@@ -18,5 +18,9 @@
   {
     "id": "common:button.viewAll",
     "defaultMessage": "View All"
+  },
+  {
+    "id": "common:button.login",
+    "defaultMessage": "Log in"
   }
 ]

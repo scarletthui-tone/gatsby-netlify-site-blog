@@ -21,6 +21,7 @@ const BlueBackground = styled.div`
   height: 110%;
   position: absolute;
   z-index: -1;
+  top: 0;
 `;
 
 const Whiteliners = styled.span`
@@ -47,7 +48,7 @@ class Hero extends React.PureComponent {
     } = this.props;
 
     return (
-      <Section className="hero" id="hero" p={0} position="relative">
+      <Section className="hero" id="hero" p={0} pt={5} position="relative">
         <BlueBackground>
           <Whiteliners />
         </BlueBackground>

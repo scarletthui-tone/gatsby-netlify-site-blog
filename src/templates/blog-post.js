@@ -1,52 +1,85 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Fragment } from 'react';
 import { kebabCase } from 'lodash';
+import styled from 'styled-components';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
+import { FormattedMessage } from 'react-intl';
 import Content, { HTMLContent } from '../components/Content';
 import CustomLink from '../components/Atoms/CustomLink';
+import Box from '../components/Atoms/Box';
+import Section from '../components/Atoms/Section';
+import BlogHeader from '../components/Blog/BlogHeader';
+import Container from '../components/Atoms/Container';
+import Row from '../components/Atoms/Row';
+import Column from '../components/Atoms/Column';
+import FlexBox from '../components/Atoms/FlexBox';
+import Paragraph from '../components/Atoms/Paragraph';
+import theme from '../styles/theme';
+import Heading from '../components/Atoms/Heading';
 
-export const BlogPostTemplate = ({ content, contentComponent, description = '', tags, title }) => {
+const StyledBlogContent = styled.div`
+  p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+  }
+`;
+
+export const BlogPostTemplate = ({
+  content, contentComponent, description = '', tags, title, author, date,
+}) => {
   const PostContent = contentComponent || Content;
 
   return (
-    <section className="section">
+    <>
       <Helmet titleTemplate="%s | Blog">
         <meta charSet="utf-8" />
         <title>{title}</title>
         <meta name="description" content={description} />
       </Helmet>
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">{title}</h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <CustomLink to={`/tags/${kebabCase(tag)}/`}>{tag}</CustomLink>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-          </div>
-        </div>
-      </div>
-    </section>
+      <BlogHeader />
+      <Section>
+        <Container>
+          <StyledBlogContent className="content">
+            <Row>
+              <Column col="is-10 is-offset-1">
+                {/* blog post header */}
+                <Box pb={[1, 1, 2]} mb={[3, 3, 4]} borderBottom={`1px solid ${theme.color.midGray}`}>
+                  <Heading fontSize={[5, 5, 6]} fontWeight={600} pb={[1, 1, 2]}>{title}</Heading>
+                  <Paragraph fontSize={1} color={theme.color.greyish}>
+                    <FormattedMessage
+                      id="blog:button.author"
+                      defaultMessage="Posted by {author} on {date}"
+                      values={{
+                        author: author || 'Plutux',
+                        date,
+                      }}
+                    />
+                  </Paragraph>
+                </Box>
+                {/* blog post content */}
+                <PostContent content={content} />
+                {/* blog post footer */}
+                {tags && tags.length > 0 && (
+                  <FlexBox pt={5} justifyContent="flex-start" color={theme.color.greyish}>
+                    <Box as="span" mr={2}>
+                      <FormattedMessage id="blog:tag" defaultMessage="Topics:" />
+                    </Box>
+                    <Box className="tags">
+                      {tags.map(tag => (
+                        <CustomLink className="tag is-link" to={`/tags/${kebabCase(tag)}/`}>
+                          {tag}
+                        </CustomLink>
+                      ))}
+                    </Box>
+                  </FlexBox>
+                )}
+              </Column>
+            </Row>
+          </StyledBlogContent>
+        </Container>
+      </Section>
+    </>
   );
-};
-
-BlogPostTemplate.propTypes = {
-  content: PropTypes.node.isRequired,
-  contentComponent: PropTypes.func,
-  description: PropTypes.string,
-  title: PropTypes.string,
-  helmet: PropTypes.object,
 };
 
 const BlogPost = ({ data }) => {
@@ -59,14 +92,10 @@ const BlogPost = ({ data }) => {
       tags={post.frontmatter.tags}
       title={post.frontmatter.title}
       description={post.frontmatter.description}
+      date={post.frontmatter.date}
+      author={post.frontmatter.author}
     />
   );
-};
-
-BlogPost.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
-  }),
 };
 
 export default BlogPost;
@@ -79,6 +108,7 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
+        author
         description
         tags
       }

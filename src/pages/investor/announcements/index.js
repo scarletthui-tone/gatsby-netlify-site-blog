@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BlogRoll from '../../../components/BlogRoll';
+import BlogRoll from '../../../components/Blog/BlogRoll';
 
 export default class BlogIndexPage extends React.Component {
   render() {

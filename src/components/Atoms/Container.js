@@ -1,5 +1,4 @@
 import React from 'react';
-import propTypes from 'prop-types';
 import styled from 'styled-components';
 import {
   color, fontSize, fontWeight, lineHeight, space, textAlign, width,
@@ -22,14 +21,5 @@ const Container = ({
     {children}
   </ContainerBase>
 );
-
-Container.defaultProps = {
-  fluid: false,
-};
-
-Container.propTypes = {
-  fluid: propTypes.bool,
-  children: propTypes.node,
-};
 
 export default Container;

@@ -13,7 +13,7 @@ import FlexBox from '../Atoms/FlexBox';
 const PartnershipItem = ({ title, icon }) => (
   <Column col="is-6" my={[3, 3, 4, 4]}>
     <FlexBox flexWrap="nowrap" justifyContent="flex-start">
-      <FlexBox background={theme.color.white} width={60} height={60} borderRadius="50%" mr={3}>
+      <FlexBox background={theme.color.white} width={60} height={60} borderRadius={290486} mr={3}>
         <PreviewCompatibleImage imageInfo={icon} />
       </FlexBox>
       <Paragraph color={theme.color.white} fontWeight={400} fontSize={[1, 2, 2, 2, 2]} m={0}>

@@ -19,9 +19,9 @@ export const StyledButton = styled.button`
 `;
 
 const Button = ({
-  children, primary, text, ...props
+  children, primary, className, text, ...props
 }) => (
-  <StyledButton className={`button ${primary ? `is-primary` : ''}`} fontSize={[1, 1, 2]} {...props}>
+  <StyledButton className={`button ${primary ? 'is-primary' : ''} ${className || ''}`} fontSize={[1, 1, 2]} {...props}>
     {!text && !children && 'Submit'}
     {!text && children}
     {text && text === 'ok' && <FormattedMessage id="common:button.ok" defaultMessage="OK" />}
@@ -29,6 +29,7 @@ const Button = ({
     {text && text === 'back' && <FormattedMessage id="common:button.back" defaultMessage="Back" />}
     {text && text === 'next' && <FormattedMessage id="common:button.next" defaultMessage="Next" />}
     {text && text === 'viewAll' && <FormattedMessage id="common:button.viewAll" defaultMessage="View All" />}
+    {text && text === 'login' && <FormattedMessage id="common:button.login" defaultMessage="Log in" />}
   </StyledButton>
 );
 
