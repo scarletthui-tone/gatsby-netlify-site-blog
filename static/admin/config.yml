@@ -219,6 +219,7 @@ collections:
     fields:
       - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'team-page' }
       - { label: 'Name', name: 'name', widget: 'string' }
+      - { label: 'Order', name: 'order', widget: 'number' }
       - { label: 'Position', name: 'position', widget: 'string' }
       - { label: 'LinkedIn', name: 'linkedin', widget: 'string' }
       - { label: 'Twitter', name: 'twitter', widget: 'string' }
@@ -232,3 +233,27 @@ collections:
             ]
       }
       - { label: 'Show on home page', name: onHomepage, widget: boolean }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+
+  - name: 'advisor'
+    label: 'Advisors'
+    folder: 'src/pages/advisors'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'advisor-page' }
+      - { label: 'Name', name: 'name', widget: 'string' }
+      - { label: 'Position', name: 'position', widget: 'string' }
+      - { label: 'LinkedIn', name: 'linkedin', widget: 'string' }
+      - { label: 'Twitter', name: 'twitter', widget: 'string' }
+      - { label: 'Profile Image',
+          name: profileImg,
+          widget: object,
+          fields:
+            [
+            { label: Alt, name: alt, widget: string },
+            { label: Image, name: image, widget: image },
+            ]
+      }
+      - { label: 'Show on home page', name: onHomepage, widget: boolean }
+      - { label: 'Body', name: 'body', widget: 'markdown' }

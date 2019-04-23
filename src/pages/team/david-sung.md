@@ -10,7 +10,7 @@ profileImg:
   alt: 'David Sung'
   image: /img/team/david-sung.jpg
 onHomepage: true
-about: >-
+---
   Prior to Plutux, David was the CTO of Harborx, a licensed mobile-based forex exchange brokerage, 
   which he joined from its inception in 2013. Working both in tech vision and commercial development, 
   he built and managed a high performance, cross-functional team that spanned product management, 
@@ -21,4 +21,3 @@ about: >-
   of 13 applications ranging from insurance, retail, health care and entertainment. David is in 
   love with cloud computing, machine learning and fintech innovations. At Plutux, he aims to promote 
   security, markets efficiency, transparency and most importantly fairness.
----

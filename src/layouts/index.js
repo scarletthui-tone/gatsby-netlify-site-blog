@@ -1,4 +1,5 @@
 import '../styles/app.scss';
+import 'perfect-scrollbar/css/perfect-scrollbar.css';
 
 import React from 'react';
 import Helmet from 'react-helmet';

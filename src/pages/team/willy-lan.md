@@ -8,7 +8,7 @@ profileImg:
   alt: 'Willy Lan'
   image: /img/team/willy-lan.png
 onHomepage: true
-about: >-
+---
   In addition to joining Plutux, Willy is the Managing Partner of Hidden Street Capital, a private 
   investment firm that focuses on early stage venture capital and blockchain investments. Before 
   that he was a Portfolio Manager at Och-Ziff Capital and managed their Asian private equity and 
@@ -19,4 +19,3 @@ about: >-
   executing investments in Greater China and South Korea. He began his career in investment banking 
   with Bear Sterns and a New York based boutique M&A firm. He graduated from Brown University with 
   a BA in Business Economics and International Relations and is fluent in English, Chinese and Korean.
----

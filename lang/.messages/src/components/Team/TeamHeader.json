@@ -1,6 +1,10 @@
 [
   {
-    "id": "team:title",
+    "id": "team:title.team",
     "defaultMessage": "Team"
+  },
+  {
+    "id": "team:title.advisor",
+    "defaultMessage": "Advisor"
   }
 ]

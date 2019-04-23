@@ -16,6 +16,10 @@
     "defaultMessage": "Product"
   },
   {
+    "id": "pageUrl:advisor",
+    "defaultMessage": "Advisor"
+  },
+  {
     "id": "pageUrl:contact",
     "defaultMessage": "Contact Us"
   },

@@ -22,6 +22,10 @@ export const pageUrls = {
     url: '/team',
     title: <FormattedMessage id="pageUrl:team" defaultMessage="Team" />,
   },
+  advisor: {
+    url: '/advisors',
+    title: <FormattedMessage id="pageUrl:advisor" defaultMessage="Advisor" />,
+  },
   contact: {
     url: '/contact',
     title: <FormattedMessage id="pageUrl:contact" defaultMessage="Contact Us" />,

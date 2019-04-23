@@ -2,11 +2,11 @@ import React from 'react';
 import { graphql, Link, StaticQuery } from 'gatsby';
 import TeamMenuUI from './TeamMenuUI';
 
-const teamQuery = graphql`
-  query TeamMenuQuery {
+const advisorQuery = graphql`
+  query AdvisorMenuQuery {
     allMarkdownRemark(
       sort: { order: ASC, fields: [frontmatter___order] }
-      filter: { frontmatter: { templateKey: { eq: "team-page" }} }
+      filter: { frontmatter: { templateKey: { eq: "advisor-page" }} }
     ) {
       edges {
         node {
@@ -25,15 +25,15 @@ const teamQuery = graphql`
   }
 `;
 
-class TeamMenu extends React.PureComponent {
+class AdvisorMenu extends React.PureComponent {
   render() {
     return (
       <StaticQuery
-        query={teamQuery}
+        query={advisorQuery}
         render={(data, count) => <TeamMenuUI data={data} count={count} {...this.props} />}
       />
     );
   }
 }
 
-export default TeamMenu;
+export default AdvisorMenu;

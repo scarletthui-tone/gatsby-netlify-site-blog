@@ -1,56 +1,20 @@
 import React from 'react';
 import { kebabCase } from 'lodash';
-import Helmet from 'react-helmet';
-import { graphql} from 'gatsby';
+import { graphql } from 'gatsby';
 import Content, { HTMLContent } from '../components/Content';
-import CustomLink from '../components/Atoms/CustomLink';
+import { TeamPageTemplate } from './team-page';
 
-
-export const AdvistorPageTemplate = ({ content, contentComponent, description = '', tags, title }) => {
-  const PostContent = contentComponent || Content;
-
-  return (
-    <section className="section">
-      <Helmet titleTemplate="%s | Blog">
-        <meta charSet="utf-8" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
-      </Helmet>
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">{title}</h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <CustomLink to={`/tags/${kebabCase(tag)}/`}>{tag}</CustomLink>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
 
 const AdvisorPage = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <AdvistorPageTemplate
+    <TeamPageTemplate
       content={post.html}
       contentComponent={HTMLContent}
-      tags={post.frontmatter.tags}
-      title={post.frontmatter.title}
-      description={post.frontmatter.description}
+      data={post.frontmatter}
+      isAdvisor
+      currSlug={post.fields.slug}
     />
   );
 };
@@ -62,11 +26,24 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+      fields {
+        slug
+      }
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        title
-        description
-        tags
+        name
+        position
+        linkedin
+        twitter
+        profileImg {
+          alt
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
       }
     }
   }

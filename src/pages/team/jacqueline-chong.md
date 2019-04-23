@@ -10,7 +10,7 @@ profileImg:
   alt: 'Jacqueline Chong'
   image: /img/team/jacqueline-chong.jpg
 onHomepage: true
-about: >-
+---
   In her past life, Jacqueline was a technical marketer and the Chief Strategy Officer and Chief 
   Marketing Officer of Green Tomato, one of Hong Kong's leading innovation consultancies, and 
   its startup incubation arm, GT STUDIO. In 2011, she co-founded TalkBox a mobile app with over 
@@ -21,4 +21,3 @@ about: >-
   Kong and received her master’s in Creative and Media Enterprises from the University of 
   Warwick. She is considered an early cryptocurrency investor and a long-time advisor at 
   various incubation programs and startup competitions in Hong Kong.
----

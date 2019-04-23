@@ -8,7 +8,7 @@ profileImg:
   alt: 'David Cai'
   image: /img/team/david-cai.jpg
 onHomepage: false
-about: >-
+---
   David is in charge of our backend and application development. He previously worked as a software engineer at Harborx 
   and before that as a backend developer at OneSky Inc. He designed, implemented and deployed multiple microservices 
   using Test Driven Development in Scala. Before that he worked as a Web Developer at Altitude Labs, and was responsible 
@@ -16,4 +16,3 @@ about: >-
   bachelor degrees in Mathematics and Computer Science with first class honors from The Hong Kong University of Science and 
   Technology. He is interested in functional programming for mathematical computing and desires to learn more about the 
   latest blockchain technologies.
----

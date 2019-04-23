@@ -6,6 +6,7 @@ import {
   flexWrap,
   fontSize,
   height,
+  maxHeight,
   justifyContent,
   position,
   textAlign,
@@ -24,6 +25,7 @@ const RowBase = styled.div.attrs({ className: 'columns' })`
   ${alignItems}
   ${textAlign}
   ${height}
+  ${maxHeight}
   ${position}
   ${flexWrap}
   ${border}

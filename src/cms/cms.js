@@ -28,12 +28,20 @@ CMS.registerPreviewTemplate('homes', props => (
     <IndexPagePreview {...props} />
   </StyledComponentWrapper>
 ));
+
 CMS.registerPreviewTemplate('blog', props => (
   <StyledComponentWrapper>
     <BlogPostPreview {...props} />
   </StyledComponentWrapper>
 ));
+
 CMS.registerPreviewTemplate('team', props => (
+  <StyledComponentWrapper>
+    <TeamPagePreview {...props} />
+  </StyledComponentWrapper>
+));
+
+CMS.registerPreviewTemplate('advisors', props => (
   <StyledComponentWrapper>
     <TeamPagePreview {...props} />
   </StyledComponentWrapper>
