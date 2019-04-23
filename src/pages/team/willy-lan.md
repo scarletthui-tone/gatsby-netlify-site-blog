@@ -4,7 +4,9 @@ templateKey: team-page
 name: Willy Lan
 position: President
 linkedin: https://www.linkedin.com/in/willylan/
-img: /img/team/willy-lan.png
+profileImage:
+  alt: Willy Lan
+  image: /img/team/willy-lan.png
 onHomepage: true
 about: >-
   In addition to joining Plutux, Willy is the Managing Partner of Hidden Street Capital, a private 

@@ -16,13 +16,7 @@ import FlexBox from '../components/Atoms/FlexBox';
 import Paragraph from '../components/Atoms/Paragraph';
 import theme from '../styles/theme';
 import Heading from '../components/Atoms/Heading';
-
-const StyledBlogContent = styled.div`
-  p {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-  }
-`;
+import { PageHelmet } from '../components/PageHelmet';
 
 export const BlogPostTemplate = ({
   content, contentComponent, description = '', tags, title, author, date,
@@ -31,51 +25,47 @@ export const BlogPostTemplate = ({
 
   return (
     <>
-      <Helmet titleTemplate="%s | Blog">
-        <meta charSet="utf-8" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
-      </Helmet>
+      <PageHelmet titleTemplate="%s | Blog" title={title} description={description} />
       <BlogHeader />
       <Section>
         <Container>
-          <StyledBlogContent className="content">
-            <Row>
-              <Column col="is-10 is-offset-1">
-                {/* blog post header */}
-                <Box pb={[1, 1, 2]} mb={[3, 3, 4]} borderBottom={`1px solid ${theme.color.midGray}`}>
-                  <Heading fontSize={[5, 5, 6]} fontWeight={600} pb={[1, 1, 2]}>{title}</Heading>
-                  <Paragraph fontSize={1} color={theme.color.greyish}>
-                    <FormattedMessage
-                      id="blog:button.author"
-                      defaultMessage="Posted by {author} on {date}"
-                      values={{
-                        author: author || 'Plutux',
-                        date,
-                      }}
-                    />
-                  </Paragraph>
-                </Box>
-                {/* blog post content */}
+          <Row>
+            <Column col="is-10 is-offset-1">
+              {/* blog post header */}
+              <Box pb={[1, 1, 2]} mb={[3, 3, 4]} borderBottom={`1px solid ${theme.color.midGray}`}>
+                <Heading fontSize={[5, 5, 6]} fontWeight={600} pb={[1, 1, 2]}>{title}</Heading>
+                <Paragraph fontSize={1} color={theme.color.greyish}>
+                  <FormattedMessage
+                    id="blog:button.author"
+                    defaultMessage="Posted by {author} on {date}"
+                    values={{
+                      author: author || 'Plutux',
+                      date,
+                    }}
+                  />
+                </Paragraph>
+              </Box>
+              {/* blog post content */}
+              <div className="content">
                 <PostContent content={content} />
-                {/* blog post footer */}
-                {tags && tags.length > 0 && (
-                  <FlexBox pt={5} justifyContent="flex-start" color={theme.color.greyish}>
-                    <Box as="span" mr={2}>
-                      <FormattedMessage id="blog:tag" defaultMessage="Topics:" />
-                    </Box>
-                    <Box className="tags">
-                      {tags.map(tag => (
-                        <CustomLink className="tag is-link" to={`/tags/${kebabCase(tag)}/`}>
-                          {tag}
-                        </CustomLink>
-                      ))}
-                    </Box>
-                  </FlexBox>
-                )}
-              </Column>
-            </Row>
-          </StyledBlogContent>
+              </div>
+              {/* blog post footer */}
+              {tags && tags.length > 0 && (
+              <FlexBox pt={5} justifyContent="flex-start" color={theme.color.greyish}>
+                <Box as="span" mr={2}>
+                  <FormattedMessage id="blog:tag" defaultMessage="Topics:" />
+                </Box>
+                <Box className="tags">
+                  {tags.map(tag => (
+                    <CustomLink className="tag is-link" to={`/tags/${kebabCase(tag)}/`}>
+                      {tag}
+                    </CustomLink>
+                  ))}
+                </Box>
+              </FlexBox>
+              )}
+            </Column>
+          </Row>
         </Container>
       </Section>
     </>

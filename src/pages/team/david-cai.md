@@ -4,7 +4,9 @@ templateKey: team-page
 name: David Cai
 position: Senior Software Engineer
 linkedin: https://www.linkedin.com/in/david-cwk/
-img: /img/team/david-cai.jpg
+profileImage:
+  alt: David Cai
+  image: /img/team/david-cai.jpg
 onHomepage: false
 about: >-
   David is in charge of our backend and application development. He previously worked as a software engineer at Harborx 

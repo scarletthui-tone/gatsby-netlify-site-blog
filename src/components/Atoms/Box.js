@@ -6,6 +6,7 @@ import {
   borders,
   borderColor,
   bottom,
+  boxShadow,
   color,
   display,
   fontSize,
@@ -56,6 +57,7 @@ const BoxBase = styled.div`
   ${textAlign}
   ${lineHeight}
   ${position}
+  ${boxShadow}
   ${bottom}
   ${top}
   ${left}

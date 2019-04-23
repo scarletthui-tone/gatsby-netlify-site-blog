@@ -4,9 +4,8 @@ import { StyleSheetManager, ThemeProvider } from 'styled-components';
 
 import theme from '../styles/theme';
 
-import AboutPagePreview from './preview-templates/AboutPagePreview';
+import TeamPagePreview from './preview-templates/TeamPagePreview';
 import BlogPostPreview from './preview-templates/BlogPostPreview';
-import InvestorPagePreview from './preview-templates/InvestorPagePreview';
 import IndexPagePreview from './preview-templates/IndexPagePreview';
 
 class StyledComponentWrapper extends React.Component {
@@ -34,8 +33,9 @@ CMS.registerPreviewTemplate('blog', props => (
     <BlogPostPreview {...props} />
   </StyledComponentWrapper>
 ));
-
-// CMS.registerPreviewTemplate('homes', IndexPagePreview);
-CMS.registerPreviewTemplate('about', AboutPagePreview);
-CMS.registerPreviewTemplate('investor', InvestorPagePreview);
+CMS.registerPreviewTemplate('team', props => (
+  <StyledComponentWrapper>
+    <TeamPagePreview {...props} />
+  </StyledComponentWrapper>
+));
 

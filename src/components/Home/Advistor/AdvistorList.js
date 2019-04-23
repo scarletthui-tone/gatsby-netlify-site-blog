@@ -6,17 +6,6 @@ import Row from '../../Atoms/Row';
 import Column from '../../Atoms/Column';
 import TeamCard from '../Team/TeamCard';
 
-const ListBackground = styled.div.attrs({ className: 'd-none d-lg-flex' })`
-  position: absolute;
-  width: 100%;
-  height: 80%;
-  left: 0;
-  background-color: ${props => props.theme.color.blackBlue};
-  transform: skewY(-6deg);
-  transform-origin: 100% 50%;
-  z-index: -1;
-`;
-
 class AdvisorListUI extends React.PureComponent {
   render() {
     const { data } = this.props;
@@ -54,14 +43,17 @@ const advisorQuery = graphql`
           frontmatter {
             templateKey
             name
-            img {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  src
-                  srcSet
-                  aspectRatio
-                  sizes
-                  base64
+            profileImage{
+              alt
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 2048, quality: 100) {
+                    src
+                    srcSet
+                    aspectRatio
+                    sizes
+                    base64
+                  }
                 }
               }
             }

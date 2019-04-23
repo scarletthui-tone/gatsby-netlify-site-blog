@@ -7,8 +7,6 @@ const PreviewCompatibleImage = ({ imageInfo, imageStyle = {} }) => {
     alt = '', childImageSharp, image
   } = imageInfo;
 
-  console.log(imageInfo);
-
   if (!!image && image.extension === 'svg') {
     return <img style={imageStyle} src={image.publicURL} alt={alt} />;
   }

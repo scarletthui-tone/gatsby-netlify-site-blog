@@ -8,7 +8,12 @@ import Paragraph from '../Atoms/Paragraph';
 import Column from '../Atoms/Column';
 import PreviewCompatibleImage from '../PreviewCompatibleImage';
 import Section from '../Atoms/Section';
+
 import theme from '../../styles/theme';
+
+import ArrowIcon from '../../img/arrow.svg';
+import Logo from '../../img/logo.svg';
+import Box from '../Atoms/Box';
 
 const BlueBackground = styled.div`
   background-image: linear-gradient(0deg, #14364c, #1d4f74);
@@ -33,6 +38,24 @@ const Whiteliners = styled.span`
   width: 100%;
   height: 100%;
   left: 0;
+`;
+
+const SuggestScrollIcon = styled.div`
+  @keyframes notice {
+      from  {transform: translate3d(0,0,0)}
+      to {transform: translate3d(0,7px,0)}
+  }
+  margin: auto;
+  width: 32px;
+  height: 32px;
+  animation-name: notice;
+  animation-duration: 700ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease;
+  img {
+      transform: rotate(90deg);
+  }
 `;
 
 const HeroHeading = styled(Heading)`
@@ -72,6 +95,9 @@ class Hero extends React.PureComponent {
                 <Paragraph color={theme.color.white} textAlign="center">
                   {comingDate}
                 </Paragraph>
+                <SuggestScrollIcon>
+                  <PreviewCompatibleImage imageInfo={{ image: ArrowIcon }} />
+                </SuggestScrollIcon>
               </Column>
             </Row>
           </Container>

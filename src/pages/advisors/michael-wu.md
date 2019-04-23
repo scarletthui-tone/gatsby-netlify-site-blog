@@ -4,7 +4,9 @@ templateKey: advisor-page
 name: Michael Wu
 position: CEO, Amber AI
 linkedin: https://www.linkedin.com/in/michael-yuao-wu-8583a820/
-img: /img/advisors/michael-wu.png
+profileImage:
+  alt: Michael Wu
+  image: /img/team/michael-wu.png
 onHomepage: true
 about: >-
   Michael Wu is the founder and CEO of Amber AI Group, the secondary market specialist in the global crypto 

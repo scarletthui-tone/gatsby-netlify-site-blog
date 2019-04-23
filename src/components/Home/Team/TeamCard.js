@@ -62,7 +62,7 @@ const TeamCard = ({
     <StyledCard>
       <Link to={url}>
         <CardImage>
-          <PreviewCompatibleImage imageInfo={data.img} />
+          <PreviewCompatibleImage imageInfo={data.profileImage} />
         </CardImage>
         <Box p={2} textAlign="left">
           <CardTitle m={0}>

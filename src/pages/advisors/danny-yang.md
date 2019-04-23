@@ -4,7 +4,9 @@ templateKey: advisor-page
 name: Danny Yang
 position: Founder, Blockseer
 linkedin: https://www.linkedin.com/in/huuep/
-img: /img/advisors/danny-yang.png
+profileImage:
+  alt: Danny Yang
+  image: /img/team/danny-yang.png
 onHomepage: true
 about: >-
   Danny previously founded several companies that innovate through blockchain and artificial intelligence. 

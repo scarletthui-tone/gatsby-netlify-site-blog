@@ -27,12 +27,11 @@ class TeamListUI extends React.PureComponent {
         <ListBackground />
         <Column col="is-10" py={4}>
           <Row multi justifyContent="center">
-            {members
-              && members.map(({ node: member }) => (
-                <Column key={member.id} col="is-3">
-                  <TeamCard url={member.fields.slug} data={member.frontmatter} />
-                </Column>
-              ))}
+            {members && members.map(({ node: member }) => (
+              <Column key={member.id} col="is-3">
+                <TeamCard url={member.fields.slug} data={member.frontmatter} />
+              </Column>
+            ))}
           </Row>
         </Column>
       </Row>
@@ -56,14 +55,17 @@ const teamQuery = graphql`
           frontmatter {
             templateKey
             name
-            img {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  src
-                  srcSet
-                  aspectRatio
-                  sizes
-                  base64
+            profileImage{
+              alt
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 2048, quality: 100) {
+                    src
+                    srcSet
+                    aspectRatio
+                    sizes
+                    base64
+                  }
                 }
               }
             }

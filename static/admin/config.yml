@@ -179,3 +179,17 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Tags', name: 'tags', widget: 'list' }
       - { label: 'Author', name: 'author', widget: 'string' }
+
+  - name: 'team'
+    label: 'Team'
+    folder: 'src/pages/team'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'team-page' }
+      - { label: 'Name', name: 'name', widget: 'string' }
+      - { label: 'Position', name: 'position', widget: 'string' }
+      - { label: 'LinkedIn', name: 'linkedin', widget: 'string' }
+      - { label: 'Twitter', name: 'twitter', widget: 'string' }
+      - { label: 'Profile Image', name: profileImage, widget: image }
+      - { label: 'Show on home page', name: onHomepage, widget: boolean }

@@ -5,7 +5,9 @@ name: Gary Lo
 position: Senior Software Engineer
 github: https://github.com/gaplo917,
 linkedin: https://www.linkedin.com/in/logary917/
-img: /img/team/gary-lo.jpg
+profileImage:
+  alt: Gary Lo
+  image: /img/team/gary-lo.jpg
 onHomepage: true
 about: >-
   Gary is a full stack developer, who has relevant experience with vertical implementation from backend to frontend while 

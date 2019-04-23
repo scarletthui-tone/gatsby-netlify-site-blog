@@ -59,7 +59,7 @@ class FooterUI extends React.Component {
             </Column>
           </Row>
         </Container>
-        <Box width="100%" borderTop="1px solid #dee2e6" py={3} textAlign="center">
+        <Box width="100%" borderTop={`1px solid rgb(20, 54, 76)`} py={3} textAlign="center">
           <Box as="span" mr={2}>
             <Paragraph color={theme.color.white} textAlign="center" fontSize={0}>
               {copyright}

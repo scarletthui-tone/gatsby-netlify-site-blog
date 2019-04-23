@@ -6,7 +6,9 @@ position: CTO
 linkedin: https://www.linkedin.com/in/davidsung/
 twitter: https://twitter.com/@david_sung
 angelList: https://angel.co/david-sung
-img: /img/team/david-sung.jpg
+profileImage:
+  alt: David Sung
+  image: /img/team/david-sung.jpg
 onHomepage: true
 about: >-
   Prior to Plutux, David was the CTO of Harborx, a licensed mobile-based forex exchange brokerage, 

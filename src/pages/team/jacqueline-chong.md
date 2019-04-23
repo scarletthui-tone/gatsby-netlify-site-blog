@@ -6,7 +6,9 @@ position: CMO
 linkedin: https://www.linkedin.com/in/chongjacqueline/
 twitter: https://twitter.com/jacquejac
 angelList: https://angel.co/jacquelinechong
-img: /img/team/jacqueline-chong.jpg
+profileImage:
+  alt: Jacqueline Chong
+  image: /img/team/jacqueline-chong.jpg
 onHomepage: true
 about: >-
   In her past life, Jacqueline was a technical marketer and the Chief Strategy Officer and Chief 

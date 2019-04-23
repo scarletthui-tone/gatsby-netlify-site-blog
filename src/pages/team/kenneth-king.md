@@ -4,7 +4,9 @@ templateKey: team-page
 name: Kenneth King
 position: President
 linkedin: https://www.linkedin.com/in/kswking/
-img: /img/team/kenneth-king.jpg
+profileImage:
+  alt: Kenneth King
+  image: /img/team/kenneth-king.jpg
 onHomepage: true
 about: >-
   Kenneth is a Stanford-graduated entrepreneur with a finance background who has built 
