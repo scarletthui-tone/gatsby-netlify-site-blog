@@ -6,8 +6,8 @@ position: CMO
 linkedin: https://www.linkedin.com/in/chongjacqueline/
 twitter: https://twitter.com/jacquejac
 angelList: https://angel.co/jacquelinechong
-profileImage:
-  alt: Jacqueline Chong
+profileImg:
+  alt: 'Jacqueline Chong'
   image: /img/team/jacqueline-chong.jpg
 onHomepage: true
 about: >-

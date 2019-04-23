@@ -4,8 +4,8 @@ templateKey: team-page
 name: David Cai
 position: Senior Software Engineer
 linkedin: https://www.linkedin.com/in/david-cwk/
-profileImage:
-  alt: David Cai
+profileImg:
+  alt: 'David Cai'
   image: /img/team/david-cai.jpg
 onHomepage: false
 about: >-

@@ -5,8 +5,8 @@ name: Cyrus Wen
 position: CEO
 linkedin: https://www.linkedin.com/in/cyruswen/
 twitter: https://twitter.com/cyruswen
-profileImage:
-  alt: Cyrus Wen
+profileImg:
+  alt: 'Cyrus Wen'
   image: /img/team/cyrus-wen.jpg
 onHomepage: true
 ---

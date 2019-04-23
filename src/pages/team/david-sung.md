@@ -6,8 +6,8 @@ position: CTO
 linkedin: https://www.linkedin.com/in/davidsung/
 twitter: https://twitter.com/@david_sung
 angelList: https://angel.co/david-sung
-profileImage:
-  alt: David Sung
+profileImg:
+  alt: 'David Sung'
   image: /img/team/david-sung.jpg
 onHomepage: true
 about: >-

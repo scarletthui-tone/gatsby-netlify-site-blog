@@ -4,7 +4,7 @@ templateKey: advisor-page
 name: Michael Wu
 position: CEO, Amber AI
 linkedin: https://www.linkedin.com/in/michael-yuao-wu-8583a820/
-profileImage:
+profileImg:
   alt: Michael Wu
   image: /img/team/michael-wu.png
 onHomepage: true

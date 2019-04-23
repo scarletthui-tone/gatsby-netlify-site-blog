@@ -4,8 +4,6 @@ import { BlogPostTemplate } from '../../templates/blog-post';
 const BlogPostPreview = ({ entry, widgetFor }) => {
   const data = entry.get('data').toJS();
 
-  console.log(data);
-
   return (
     <BlogPostTemplate
       content={widgetFor('body')}

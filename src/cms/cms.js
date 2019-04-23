@@ -16,7 +16,7 @@ class StyledComponentWrapper extends React.Component {
     return (
       <StyleSheetManager target={iframeHeadElem}>
         <ThemeProvider theme={theme}>
-        {this.props.children}
+          {this.props.children}
         </ThemeProvider>
       </StyleSheetManager>
     );

@@ -5,8 +5,8 @@ name: Gary Lo
 position: Senior Software Engineer
 github: https://github.com/gaplo917,
 linkedin: https://www.linkedin.com/in/logary917/
-profileImage:
-  alt: Gary Lo
+profileImg:
+  alt: 'Gary Lo'
   image: /img/team/gary-lo.jpg
 onHomepage: true
 about: >-

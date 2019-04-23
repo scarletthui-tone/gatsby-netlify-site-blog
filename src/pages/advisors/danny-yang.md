@@ -4,7 +4,7 @@ templateKey: advisor-page
 name: Danny Yang
 position: Founder, Blockseer
 linkedin: https://www.linkedin.com/in/huuep/
-profileImage:
+profileImg:
   alt: Danny Yang
   image: /img/team/danny-yang.png
 onHomepage: true

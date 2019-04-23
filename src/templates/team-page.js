@@ -78,7 +78,7 @@ export const TeamPageTemplate = ({ content, contentComponent, data }) => {
                       </Paragraph>
                     </Box>
                     <CardImage>
-                      <PreviewCompatibleImage imageInfo={data.profileImage} />
+                      <PreviewCompatibleImage imageInfo={data.profileImg} />
                     </CardImage>
                   </Box>
                 </Column>
@@ -121,7 +121,7 @@ export const pageQuery = graphql`
         linkedin
         twitter
         about
-        profileImage {
+        profileImg {
           alt
           image {
             childImageSharp {

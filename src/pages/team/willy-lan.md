@@ -4,8 +4,8 @@ templateKey: team-page
 name: Willy Lan
 position: President
 linkedin: https://www.linkedin.com/in/willylan/
-profileImage:
-  alt: Willy Lan
+profileImg:
+  alt: 'Willy Lan'
   image: /img/team/willy-lan.png
 onHomepage: true
 about: >-

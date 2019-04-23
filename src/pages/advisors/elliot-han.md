@@ -4,7 +4,7 @@ templateKey: advisor-page
 name: Elliot Han
 position: Blockchain Advisor
 linkedin: https://www.linkedin.com/in/elliot-j-han/
-profileImage:
+profileImg:
   alt: Elliot Han
   image: /img/team/elliot-han.png
 onHomepage: true

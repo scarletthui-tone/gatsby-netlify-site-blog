@@ -55,7 +55,7 @@ const teamQuery = graphql`
           frontmatter {
             templateKey
             name
-            profileImage{
+            profileImg{
               alt
               image {
                 childImageSharp {

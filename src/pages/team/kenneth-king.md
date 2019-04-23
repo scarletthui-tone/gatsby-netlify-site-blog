@@ -4,8 +4,8 @@ templateKey: team-page
 name: Kenneth King
 position: President
 linkedin: https://www.linkedin.com/in/kswking/
-profileImage:
-  alt: Kenneth King
+profileImg:
+  alt: 'Kenneth King'
   image: /img/team/kenneth-king.jpg
 onHomepage: true
 about: >-

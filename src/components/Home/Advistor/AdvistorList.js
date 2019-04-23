@@ -43,7 +43,7 @@ const advisorQuery = graphql`
           frontmatter {
             templateKey
             name
-            profileImage{
+            profileImg{
               alt
               image {
                 childImageSharp {
