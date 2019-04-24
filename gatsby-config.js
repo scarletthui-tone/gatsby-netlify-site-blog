@@ -3,8 +3,19 @@ const proxy = require('http-proxy-middleware');
 module.exports = {
   // default meta
   siteMetadata: {
-    title: 'KALDI',
-    description: 'default desc',
+    meta: {
+      title: 'Plutux',
+      description: 'default desc',
+    },
+    hubspot: {
+      portalID: '4679940',
+      form: {
+        whitelist: 'e8a4f427-c985-4a8c-97d0-d87a7205647b',
+        subscribe: '5d4a589e-b14c-41b1-9708-2529c0595f4c',
+        contact: '7079e6cc-a3c1-4d53-892d-7e8375dac02a',
+        listing: 'f250a090-b4f1-421c-a4c6-9008d356337a',
+      },
+    },
   },
   plugins: [
     'gatsby-plugin-react-helmet',

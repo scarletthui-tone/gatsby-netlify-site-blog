@@ -9,7 +9,7 @@ profileImg:
   image: /img/advisors/elliot-han.png
 onHomepage: true
 ---
-  Elliot Han is an experienced financial and legal executive in the blockchain, financial technology ecosystem, 
+Elliot Han is an experienced financial and legal executive in the blockchain, financial technology ecosystem, 
   including digital assets and its respective capital markets.He was the head of banking and operating officer
    at the Argon Group, a boutique investment bank focused exclusively on the digital finance sector. Elliot also 
    has extensive experience in traditional financial services having been the head of the West Coast technology 

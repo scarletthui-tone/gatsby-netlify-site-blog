@@ -10,7 +10,7 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import theme from '../styles/theme';
 
-import { useSiteMetadata } from '../utilis/helpers';
+import { useSiteMetadata } from '../utilis/getMetaData';
 import { langList, DEFAULT_LANG } from '../config/langSetting';
 
 const getIntlLocale = locale => require(`react-intl/locale-data/${locale}`);
@@ -30,7 +30,10 @@ langList.forEach((lang) => {
 const TemplateWrapper = ({
   children, pageContext, location, ...rest
 }) => {
-  const { title, description } = useSiteMetadata();
+  const { meta, hubspot } = useSiteMetadata();
+  const { title, description } = meta;
+  const { portalID } = hubspot;
+
   const lang = pageContext.lang || DEFAULT_LANG;
 
   let purePath = `${location.pathname}/`.replace('//', '/');
@@ -44,7 +47,7 @@ const TemplateWrapper = ({
       <ThemeProvider theme={theme}>
         <div>
           <Helmet>
-            <html lang="en" />
+            <html lang={lang} />
             <title>{title}</title>
             <meta name="description" content={description} />
             <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
@@ -57,7 +60,6 @@ const TemplateWrapper = ({
             <meta property="og:url" content="/" />
             <meta property="og:image" content="/img/og-image.jpg" />
           </Helmet>
-          <div id="styled-component-css" />
           <Navbar lang={lang} />
           <div>{children}</div>
           <Footer pathname={purePath} />

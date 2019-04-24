@@ -23,7 +23,6 @@ footer:
       url: /team
     - label: Contact
       url: /contact
-      openNewTab: true,
     - label: Hiring
       url: https://angel.co/plutux/jobs
   - title: 'Social'

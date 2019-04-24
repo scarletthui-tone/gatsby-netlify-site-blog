@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { Link, graphql } from 'gatsby';
+import { useSiteMetadata } from '../utilis/getMetaData';
 
 class TagRoute extends React.Component {
   render() {
@@ -12,8 +13,10 @@ class TagRoute extends React.Component {
         </Link>
       </li>
     ));
+    const metaData = useSiteMetadata();
+    const title = metaData.meta.title;
+
     const tag = this.props.pageContext.tag;
-    const title = this.props.data.site.siteMetadata.title;
     const totalCount = this.props.data.allMarkdownRemark.totalCount;
     const tagHeader = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged with “${tag}”`;
 
@@ -40,11 +43,6 @@ export default TagRoute;
 
 export const tagPageQuery = graphql`
   query TagPage($tag: String) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [frontmatter___date], order: DESC }

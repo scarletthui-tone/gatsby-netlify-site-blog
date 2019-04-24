@@ -23,12 +23,12 @@ class SiteMap extends React.PureComponent {
     return (
       <Row justifyContent="flex-end">
         {footer.map(category => (
-          <Column col="is-3">
+          <Column col="is-3" key={category.title}>
             <Paragraph color={theme.color.white} fontWeight={600} pb={2}>
               {category.title || ''}
             </Paragraph>
             {category.links.map(({ label, url }) => (
-              <Box pb={1}>
+              <Box pb={1} key={label}>
                 <CustomLink to={url}>
                   <LinkWord color={theme.color.white} fontSize={[1, 1, 2]}>
                     {label}
